@@ -1,5 +1,5 @@
 <?php
-namespace GDText;
+namespace GDTextPersian;
 
 class Box
 {

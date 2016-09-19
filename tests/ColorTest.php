@@ -1,7 +1,7 @@
 <?php
-namespace GDText\Tests;
+namespace GDTextPersian\Tests;
 
-use GDText\Color;
+use GDTextPersian\Color;
 
 class ColorTest extends TestCase
 {

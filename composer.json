@@ -1,6 +1,6 @@
 {
-    "name": "stil/gd-text",
-    "description": "A class drawing multiline and aligned text on pictures. Uses GD extension.",
+    "name": "kingofnull/gd-text-persian",
+    "description": "A class drawing multiline and aligned text on pictures. Uses GD extension OPTIMIZED FOR PERSIAN.",
     "license": "MIT",
     "require": {
         "php": ">=5.3",
@@ -11,8 +11,8 @@
     },
     "autoload": {
         "psr-4": {
-            "GDText\\": "src/",
-            "GDText\\Tests\\": "tests/"
+            "GDTextPersian\\": "src/",
+            "GDTextPersian\\Tests\\": "tests/"
         }
     }
 }

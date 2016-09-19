@@ -1,11 +1,11 @@
 <?php
-namespace GDText\Tests;
+namespace GDTextPersian\Tests;
 
-use GDText\Box;
-use GDText\Color;
-use GDText\HorizontalAlignment;
-use GDText\TextWrapping;
-use GDText\VerticalAlignment;
+use GDTextPersian\Box;
+use GDTextPersian\Color;
+use GDTextPersian\HorizontalAlignment;
+use GDTextPersian\TextWrapping;
+use GDTextPersian\VerticalAlignment;
 
 class TextAlignmentTest extends TestCase
 {

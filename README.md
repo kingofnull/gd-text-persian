@@ -1,16 +1,14 @@
-gd-text-persian
+gd-text
 =======
 This package is an forked version of gd-text by stil (https://github.com/stil/gd-text) that has been optimized for persian language.
-
-این بسته نسخه انشعاب شده از gd-text است که برای برای زبان فارسی بهینه سازی شده است.
 
 ###Basic usage example
 ```php
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
-use GDText\Box;
-use GDText\Color;
+use GDTextPersian\Box;
+use GDTextPersian\Color;
 
 $im = imagecreatetruecolor(500, 500);
 $backgroundColor = imagecolorallocate($im, 0, 18, 64);
@@ -58,8 +56,8 @@ Multilined text
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
-use GDText\Box;
-use GDText\Color;
+use GDTextPersian\Box;
+use GDTextPersian\Color;
 
 $im = imagecreatetruecolor(500, 500);
 $backgroundColor = imagecolorallocate($im, 0, 18, 64);
@@ -89,8 +87,8 @@ Text stroke
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
-use GDText\Box;
-use GDText\Color;
+use GDTextPersian\Box;
+use GDTextPersian\Color;
 
 $im = imagecreatetruecolor(500, 500);
 $backgroundColor = imagecolorallocate($im, 0, 18, 64);
@@ -119,8 +117,8 @@ Text background
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
-use GDText\Box;
-use GDText\Color;
+use GDTextPersian\Box;
+use GDTextPersian\Color;
 
 $im = imagecreatetruecolor(500, 500);
 $backgroundColor = imagecolorallocate($im, 0, 18, 64);

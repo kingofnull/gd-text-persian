@@ -1,9 +1,9 @@
 <?php
-namespace GDText;
+namespace GDTextPersian;
 
 /**
  * 8-bit RGB color representation.
- * @package GDText
+ * @package GDTextPersian
  */
 class Color
 {

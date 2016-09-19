@@ -1,9 +1,9 @@
 <?php
-namespace GDText\Tests;
+namespace GDTextPersian\Tests;
 
-use GDText\Box;
-use GDText\Color;
-use GDText\TextWrapping;
+use GDTextPersian\Box;
+use GDTextPersian\Color;
+use GDTextPersian\TextWrapping;
 
 class TextWrappingTest extends TestCase
 {

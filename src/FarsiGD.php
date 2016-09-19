@@ -1,6 +1,6 @@
 <?php
 // error_reporting(0);
-namespace GDText;
+namespace GDTextPersian;
 
 class FarsiGD {
 

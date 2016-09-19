@@ -1,5 +1,5 @@
 <?php
-namespace GDText\Tests;
+namespace GDTextPersian\Tests;
 
 class TestCase extends \PHPUnit_Framework_TestCase
 {
