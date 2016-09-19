@@ -1,5 +1,8 @@
-gd-text
+gd-text-persian
 =======
+This package is an forked version of gd-text by stil (https://github.com/stil/gd-text) that has been optimized for persian language.
+
+این بسته نسخه انشعاب شده از gd-text است که برای برای زبان فارسی بهینه سازی شده است.
 
 ###Basic usage example
 ```php
