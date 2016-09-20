@@ -2,6 +2,10 @@ gd-text
 =======
 This package is an forked version of gd-text by stil (https://github.com/stil/gd-text) that has been optimized for persian language.
 
+###Persian example
+```php
+
+```php
 ###Basic usage example
 ```php
 <?php

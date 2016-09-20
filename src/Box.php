@@ -90,7 +90,8 @@ class Box
 
     public function __construct(&$image,$rtl=false)
     {
-        $this->im = $image;
+        $this->im = &$image;
+		
         $this->rtl = $rtl;
         $this->fontColor = new Color(0, 0, 0);
         $this->strokeColor = new Color(0, 0, 0);
@@ -204,12 +205,29 @@ class Box
      * @param int $width Width of texbox in pixels.
      * @param int $height Height of textbox in pixels.
      */
-    public function setBox($x, $y, $width, $height)
+    public function setBox($x=0, $y=0, $width=0, $height=0)
     {
         $this->box['x'] = $x;
         $this->box['y'] = $y;
-        $this->box['width'] = $width;
-        $this->box['height'] = $height;
+        $this->box['width'] = ($width?$width:imagesx($this->im));
+        $this->box['height'] = ($height?$height:imagesy($this->im));
+    }    
+	
+	/**
+     * Sets textbox position and dimensions
+     * @param int $x Distance in pixels from left edge of image.
+     * @param int $y Distance in pixels from top edge of image.
+     * @param int $width Width of texbox in pixels.
+     * @param int $height Height of textbox in pixels.
+     */
+    public function setBoxByMargin($margin)
+    {
+        $this->box['x'] = $margin;
+        $this->box['y'] = $margin;
+        $this->box['width'] = imagesx($this->im)-$margin;
+        $this->box['height'] = imagesy($this->im)-$margin;
+		// var_dump($this->box);
+		// die();
     }
 
     /**
@@ -232,7 +250,7 @@ class Box
      * Draws the text on the picture.
      * @param string $text Text to draw. May contain newline characters.
      */
-    public function draw($text)
+    public function draw($text,$autoVerticalResize=false)
     {
 		if($this->rtl){
 			$fgd = new FarsiGD();
@@ -267,18 +285,32 @@ class Box
 
         $lineHeightPx = $this->lineHeight * $this->fontSize;
         $textHeight = count($lines) * $lineHeightPx;
-
-        switch ($this->alignY) {
+		// array_push($lines,$this->box['y']+$textHeight);
+		// $text="$textHeight\n$text";
+      
+		if($autoVerticalResize && imagesy($this->im)<($newHeight=$this->box['y']+$textHeight)){
+				$this->box['height']=$newHeight;
+				// list($width, $height) = sgetimagesize($file);
+				$srcWidth=imagesx($this->im);
+				$srcHeight=imagesy($this->im);
+				// var_dump($srcWidth,$srcHeight,$newHeight);
+				$desIm = imagecreatetruecolor($srcWidth, $newHeight);
+				imagecopyresampled($desIm, $this->im, 0, 0, 0, 0, $srcWidth, $newHeight, $srcWidth, $newHeight);
+				$this->im=$desIm; 
+		}
+		
+		  switch ($this->alignY) {
             case VerticalAlignment::Center:
                 $yAlign = ($this->box['height'] / 2) - ($textHeight / 2);
                 break;
             case VerticalAlignment::Bottom:
-                $yAlign = $this->box['height'] - $textHeight;
+                $yAlign = $this->box['height'] - $textHeight-$this->box['y'];
                 break;
             case VerticalAlignment::Top:
             default:
                 $yAlign = 0;
         }
+		
 
         $n = 0;
 		if($this->rtl){
@@ -423,4 +455,5 @@ class Box
             $text
         );
     }
+	
 }
