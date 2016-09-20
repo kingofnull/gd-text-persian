@@ -12,7 +12,10 @@
         "php": ">=5.3",
         "ext-gd": "*"
     },
-	"minimum-stability": "stable",
+	"minimum-stability": "1.0.0",
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    },
     "autoload": {
         "psr-4": {
             "GDTextPersian\\": "src"
