@@ -1,11 +1,51 @@
-gd-text
+gd-text-persian
 =======
 This package is an forked version of gd-text by stil (https://github.com/stil/gd-text) that has been optimized for persian language.
 
+##install 
+Install this library using composer:
+```bash
+composer require kingofnull/gd-text-persian
+```
+
 ###Persian example
 ```php
+<?php
+require __DIR__.'/vendor/autoload.php';
+use GDTextPersian\Box;
+use GDTextPersian\Color;
+$im = imagecreatetruecolor(500, 100);
 
-```php
+//instantiate class with rtl option(second argument[$rtl=true])
+$box = new Box($im,true);
+$box->setFontFace('c:\Windows\Fonts\tahoma.ttf');
+$box->setFontColor(new Color(255, 75, 140));
+$box->setFontSize(20);
+//no arguments means use image size [this function was manipulated]
+//$box->setBox();
+//or you can use bellow function [this function was added (experimental)]
+$box->setBoxByMargin(50);
+
+//set text position
+$box->setTextAlign('right', 'top');
+
+$text = 'امروز آمدیم تا دانلود نسخه جدید خانواده فونت بی نازنین b nazanin را در اختیار کاربران محترم ایران فونت قرار بدهیم. خانواده این فونت که ما آن را نازنین پلاس میخوانیم شامل نازنین معمولی(Regular)، نازنین ضخیم (Bold) و نازنین سیاه (Black) است. این فونت از تمام حروف فارسی، عربی و انگلیسی به خوبی پشتیبانی می‌کند.  با این فونت با راحتی می توانید هم حروف عربی (حروف ة، ی، ک و...) را تایپ کنید و هم حروف انگلیسی را. این فونت در استفاده شما در کارهای مذهبی و البته کتب درسی و آموزشی مختلف می تواند بسیار راه گشا باشد. در صورت مشاهده هر گونه ایراد و یا ضعف در فونت خواهشمند است ما را در جریان قرار گذارید تا در سریع ترین زمان اشکالات اصلاح و رفع گردند. با تشکر.  منبع: Irfont.ir';
+
+
+//first argument is paragraph text and second argument set auto vertical resize(vertical expand)	
+$box->draw($text,true);
+//set header for image
+header("Content-type: image/png");
+//dump image
+imagepng($im);
+```
+
+Example output:
+
+![fonts example](images/persian.png)
+
+
+
 ###Basic usage example
 ```php
 <?php
