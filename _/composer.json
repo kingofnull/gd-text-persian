@@ -1,0 +1,13 @@
+{
+    "name": "mss/_",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kingofnull",
+            "email": "msstrashbin@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

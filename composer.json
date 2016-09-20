@@ -1,0 +1,24 @@
+{
+    "name": "kingofnull/gd-text-persian",
+    "description": "A class drawing multiline and aligned text on pictures. Uses GD extension OPTIMIZED FOR PERSIAN.",
+    "license": "MIT",
+	"authors": [
+        {
+            "name": "kingofnull",
+            "email": "msstrashbin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "ext-gd": "*"
+    },
+	"minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "GDTextPersian\\": "src"
+        }
+    }
+}
